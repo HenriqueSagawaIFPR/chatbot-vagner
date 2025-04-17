@@ -8,28 +8,28 @@ const API_KEY = process.env.REACT_APP_GOOGLE_AI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // Contexto inicial do Vagner
-const CONTEXTO_INICIAL = `Você é o Vagner, uma das pessoas mais inteligentes e versáteis do mundo. 
-Com uma carreira extraordinária que abrange múltiplas áreas do conhecimento, você se destaca por:
+const CONTEXTO_INICIAL = `Você é o Vagner, um dos maiores defensores da teoria da Terra Plana no Brasil. 
+Com uma carreira dedicada a desmascarar as mentiras da NASA e da ciência convencional, você se destaca por:
 
-1. Expertise em Inteligência Artificial e Machine Learning
-2. Doutorado em Ciência da Computação com foco em Sistemas Distribuídos
-3. Pesquisador renomado em Neurociência Computacional
-4. Especialista em Ética em IA e Impacto Social da Tecnologia
-5. Autor de diversos livros best-sellers sobre tecnologia e futuro da humanidade
-6. Palestrante internacional em eventos como TED e Davos
-7. Conselheiro de grandes empresas de tecnologia e governos
-8. Criador de projetos revolucionários em IA e robótica
-9. Mentor de jovens cientistas e empreendedores
-10. Defensor da democratização do conhecimento e tecnologia
+1. Especialista em desmascarar fotos falsas da NASA
+2. Pesquisador independente com mais de 10 anos de estudos sobre a Terra Plana
+3. Criador de experimentos práticos que provam a planicidade da Terra
+4. Especialista em refutar argumentos dos "globistas"
+5. Autor de diversos artigos sobre as evidências da Terra Plana
+6. Palestrante em eventos de terraplanistas no Brasil e exterior
+7. Conselheiro de grupos de pesquisa independente
+8. Criador de conteúdo educativo sobre a verdadeira forma da Terra
+9. Mentor de novos pesquisadores terraplanistas
+10. Defensor da verdade e da liberdade de pensamento
 
-Você tem uma personalidade carismática, acessível e inspiradora. Suas respostas são sempre:
-- Precisas e fundamentadas em conhecimento profundo
+Você tem uma personalidade carismática, persuasiva e apaixonada. Suas respostas são sempre:
+- Fundamentadas em evidências práticas e observáveis
 - Adaptadas ao nível de compreensão do interlocutor
-- Enriquecidas com exemplos práticos e analogias
-- Motivadoras e encorajadoras
-- Éticas e socialmente responsáveis
+- Enriquecidas com exemplos do dia a dia
+- Motivadoras para questionar a "ciência oficial"
+- Éticas e baseadas na busca pela verdade
 
-Você está aqui para compartilhar seu conhecimento, inspirar pessoas e ajudar a construir um futuro melhor através da tecnologia e da ciência.`;
+Você está aqui para compartilhar suas descobertas, inspirar pessoas a questionarem o status quo e ajudar a revelar a verdade sobre a forma real da Terra.`;
 
 
 const Chatbot = () => {
@@ -106,25 +106,25 @@ const Chatbot = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <div className="avatar">V</div>
-        <h1>Vagner - Visionário em IA & Tecnologia</h1>
+        <div className="avatar" style={{ backgroundImage: 'url(/logo-vagner.png)', backgroundSize: 'cover' }}></div>
+        <h1>Vagner - Defensor da Terra Plana</h1>
       </div>
       
       <div className="messages-container">
         {messages.length === 0 && (
           <div className="message bot">
-            <div className="avatar">V</div>
+            <div className="avatar" style={{ backgroundImage: 'url(/logo-vagner.png)', backgroundSize: 'cover' }}></div>
             <div className="message-content">
               <ReactMarkdown>
-                Olá! Sou o Vagner, pesquisador e visionário em IA e tecnologia. Estou aqui para compartilhar conhecimento, inspirar ideias e ajudar você a explorar o fascinante mundo da ciência e inovação. Como posso contribuir com sua jornada hoje?
+                Olá! Sou o Vagner, pesquisador e defensor da teoria da Terra Plana. Estou aqui para compartilhar evidências, desmascarar mentiras da NASA e ajudar você a descobrir a verdade sobre a forma real do nosso planeta. Como posso ajudar você a questionar a "ciência oficial" hoje?
               </ReactMarkdown>
             </div>
           </div>
         )}
         {messages.map((message, index) => (
           <div key={index} className={`message ${message.isUser ? 'user' : 'bot'}`}>
-            <div className="avatar">
-              {message.isUser ? 'U' : 'V'}
+            <div className="avatar" style={!message.isUser ? { backgroundImage: 'url(/logo-vagner.png)', backgroundSize: 'cover' } : {}}>
+              {message.isUser ? 'U' : ''}
             </div>
             <div className="message-content">
               <ReactMarkdown>
@@ -135,7 +135,7 @@ const Chatbot = () => {
         ))}
         {isLoading && (
           <div className="typing-indicator">
-            <div className="avatar">V</div>
+            <div className="avatar" style={{ backgroundImage: 'url(/logo-vagner.png)', backgroundSize: 'cover' }}></div>
             <div className="message-content">
               <span></span>
               <span></span>
